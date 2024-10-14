@@ -1,0 +1,13 @@
+<div class="watermark"></div>
+<h1>Hello, post an anonymous message here: </h1>
+
+<ul>
+{{#each messages}}
+<li>{{this}}</li>
+{{/each}}
+</ul>
+
+<form action="/message" method="post">
+    <input type="text" name="content" autofocus /> <br>
+    <button type="submit">Submit</button>
+</form>
