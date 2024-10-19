@@ -1,5 +1,7 @@
 import express from 'express';
 import { engine } from 'express-handlebars';
+import 'dotenv/config';
+import { db } from './database.cjs';
 
 const app = express();
 
@@ -12,6 +14,17 @@ app.use(express.static("public"));
 
 // array for messages
 var messages = [];
+var connection = db();
+
+//pull messages from db
+connection.query('SELECT message FROM cuneteam.messages;', (err, rows, fields) => {
+    if (err) throw err;
+
+    rows.forEach(element => {
+        messages.push(element.message);
+    });
+
+});
 
 // send a get request, and return a response
 app.get('/', (request, response) => {
@@ -20,7 +33,15 @@ app.get('/', (request, response) => {
 });
 
 app.post('/message', (request, response) => {
-    messages.push(request.body.content);
+    
+    var message = request.body.content;
+    messages.push(message);
+
+    //create parameterized sql statement
+    const query = 'INSERT INTO `cuneteam`.`messages` (`message`) VALUES (?);';
+
+    connection.query(query,message);
+
     response.redirect('/');
 });
 

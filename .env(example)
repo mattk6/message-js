@@ -1,0 +1,4 @@
+DB_SERVER="localhost"
+DB_USERNAME="your user"
+DB_PASSWORD="your password"
+DATABASE="your database"

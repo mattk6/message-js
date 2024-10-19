@@ -9,6 +9,12 @@ In terminal, cd into the message-js directory, and build the environment by runn
 npm install
 ```
 
+### Database Setup
+this project uses a mysql database. you will need to install it with instructions availible at: https://dev.mysql.com
+
+Then you need a .env file configured with your database connection information, a sample is supplied as .env(example)
+
+
 ## Run the app
 
 Launch the webserver by running the following with port:8001:
