@@ -14,7 +14,7 @@ This project uses a mysql database. you will need to install it with instruction
 
 Then you need a .env file configured with your database connection information, a sample is supplied as .env(example)
 
-here is the ddl for creating the nescesarry table in mySQL:
+Here is the ddl for creating the nescesarry table in mySQL:
 
 ```
 CREATE TABLE `messages` (
