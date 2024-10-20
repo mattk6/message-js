@@ -10,9 +10,20 @@ npm install
 ```
 
 ### Database Setup
-this project uses a mysql database. you will need to install it with instructions availible at: https://dev.mysql.com
+This project uses a mysql database. you will need to install it with instructions availible at: https://dev.mysql.com
 
 Then you need a .env file configured with your database connection information, a sample is supplied as .env(example)
+
+here is the ddl for creating the nescesarry table in mySQL:
+
+```
+CREATE TABLE `messages` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `message` varchar(140) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+```
 
 
 ## Run the app
